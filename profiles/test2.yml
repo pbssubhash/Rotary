@@ -1,0 +1,21 @@
+--- 
+apiVersion: 0.1
+basicInfo: 
+  author: pbssubhash
+  name: ReconProfile
+  targetOs: "Windows" # Accepted value is Windows/Linux for now.
+userInputs:
+  subCommandWhoami: "Enter subcommand for whoami.exe" # Value: description
+  subCommandUsers: "Enter subcommand for net.exe"
+concurrent: true
+commands:
+  - name: "First Command - Whoami"
+    concurrent: true
+    commands:
+      - "first_command %{subCommandWhoami}"
+      - "second_command"
+  - name: "Second Command - Net.exe"
+    concurrent: true
+    commands:
+      - "third_command %{subCommandUsers}"
+      - "fourth_command"
