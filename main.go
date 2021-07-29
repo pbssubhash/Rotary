@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -10,12 +11,22 @@ import (
 )
 
 func main() {
+	fmt.Println(`
+    █▀▀█ █▀▀█ ▀▀█▀▀ █▀▀█ █▀▀█ █░░█ 
+    █▄▄▀ █░░█ ░░█░░ █▄▄█ █▄▄▀ █▄▄█ 
+    ▀░▀▀ ▀▀▀▀ ░░▀░░ ▀░░▀ ▀░▀▀ ▄▄▄█
+    Built by pbssubhash       v0.1
+  https://github.com/pbssubhash/rotary`)
+	fmt.Println("    ")
 	template := flag.String("c", "Default", "-c ../webrecon.yml")
 	threads := flag.Int("t", 10, " -t 100")
 	flag.Parse()
 	if *template == "Default" {
+		fmt.Println("Required argument not present.")
+		fmt.Println("Usage: ")
 		flag.PrintDefaults()
-		log.Fatalln("Required argument not present.")
+		os.Exit(1)
+		// log.Fatalln("Required argument not present.")
 
 	}
 	file, err := os.Open(*template)
