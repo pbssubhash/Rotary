@@ -48,7 +48,7 @@ commands:
 ## How to start working!
 
 #### Download and run (The easy way)
-1. Download compiled binaries from here: [Download Rotary Compiled](https://github.com/pbssubhash/Rotary/Compiled)
+1. Download compiled binaries from here: [Download Rotary Compiled](https://github.com/pbssubhash/Rotary/tree/main/build)
 #### Building from the source  (The long way)
 1. Install Golang [Download and Install Golang](https://golang.org/dl/)
 2. Ensure Go (`go`) is in Path
